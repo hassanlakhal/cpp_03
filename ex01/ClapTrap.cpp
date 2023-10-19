@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/12 15:49:29 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:57:58 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 ClapTrap::ClapTrap():hitPoint(10), energyPoints(10),attackDamage(0)
 {
-    
+    std::cout << " default constructor ClapTrap" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
+    std::cout << " called Destructor ClapTrap " << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string str) :hitPoint(10), energyPoints(10),attackDamage(0)
@@ -55,7 +56,6 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    // this->attackDamage = amount;
     if (this->hitPoint > 0)
     {
         this->hitPoint -= amount;
@@ -66,7 +66,6 @@ void ClapTrap::takeDamage(unsigned int amount)
     }
     else
         std::cout << "ClapTrap " << this->name << " can't attack no hit points or energy left" << std::endl;
-    //this->attackDamage = amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
