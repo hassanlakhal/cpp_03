@@ -6,15 +6,17 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:36 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/19 13:40:04 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:20:41 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ScavTrap.hpp"
+
+#include"FragTrap.hpp"
 
 int main() 
 {
     ScavTrap claptrap("JEd-TP");
+    FragTrap claptrap1("JEd-TP");
     // claptrap.takeDamage(2);
     claptrap.attack("Enemy");
     claptrap.takeDamage(10);

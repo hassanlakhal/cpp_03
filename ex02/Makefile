@@ -6,13 +6,13 @@
 #    By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/12 11:03:40 by hlakhal-          #+#    #+#              #
-#    Updated: 2023/10/17 18:15:36 by hlakhal-         ###   ########.fr        #
+#    Updated: 2023/10/20 18:12:25 by hlakhal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ClapTrap
 
-SRC = main.cpp  ClapTrap.cpp ScavTrap.cpp
+SRC = main.cpp  ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror
 

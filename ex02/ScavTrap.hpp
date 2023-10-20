@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:03:48 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/19 13:14:23 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:05:46 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ class ScavTrap:public ClapTrap
     private:
         /* data */
     public:
+        ScavTrap();
         ScavTrap(std::string str);
+        ScavTrap(const ScavTrap& other);
+        ScavTrap& operator=(const ScavTrap& other);
         ~ScavTrap();
-        void highFivesGuys(void);
+        void guardGate();
 };
