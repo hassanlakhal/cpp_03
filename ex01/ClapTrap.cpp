@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/19 12:57:58 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:06:39 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string str) :hitPoint(10), energyPoints(10),attackDamage
     this->name = str;
 }
 
-ClapTrap& ClapTrap::operator= (ClapTrap &other)
+ClapTrap& ClapTrap::operator= (const ClapTrap &other)
 {
     if (this == &other)
         return *this;
@@ -38,7 +38,7 @@ ClapTrap& ClapTrap::operator= (ClapTrap &other)
     return *this;
 }
 
-ClapTrap::ClapTrap(ClapTrap& other) : name(other.name), hitPoint(other.hitPoint), energyPoints(other.energyPoints),attackDamage(other.attackDamage)
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoint(other.hitPoint), energyPoints(other.energyPoints),attackDamage(other.attackDamage)
 {
     
 }

@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:03:44 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/20 16:49:42 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:56:55 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,42 @@
 ScavTrap::ScavTrap()
 {
     std::cout << " default Constructor ScavTrap " << std::endl;
+    this->hitPoint = 100;
+    this->energyPoints = 50;
+    this->attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string str)
 {
+    std::cout << " parametrize Constructor ScavTrap " << std::endl;
     this->name = str;
     this->hitPoint = 100;
     this->energyPoints = 50;
     this->attackDamage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    this->name = other.name;
+    this->hitPoint = other.hitPoint;
+    this->energyPoints = other.energyPoints;
+    this->attackDamage = other.attackDamage;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    if (this == &other)
+        return *this;    
+    this->name = other.name;
+    this->hitPoint = other.hitPoint;
+    this->energyPoints = other.energyPoints;
+    this->attackDamage = other.attackDamage;
+    return *this;
+}
+
 ScavTrap::~ScavTrap()
 {
-    std::cout << " called destructor ScavTrap " << std::endl;
+    std::cout << " called Destructor ScavTrap " << std::endl;
 }
 void ScavTrap::guardGate()
 {
