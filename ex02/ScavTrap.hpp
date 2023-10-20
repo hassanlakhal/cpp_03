@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:03:36 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/20 16:23:54 by hlakhal-         ###   ########.fr       */
+/*   Created: 2023/10/17 17:03:48 by hlakhal-          #+#    #+#             */
+/*   Updated: 2023/10/19 13:14:23 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ScavTrap.hpp"
+#include"ClapTrap.hpp"
 
-int main() 
+class ScavTrap:public ClapTrap
 {
-    ScavTrap claptrap("JEd-TP");
-    // claptrap.takeDamage(2);
-    claptrap.attack("Enemy");
-    claptrap.takeDamage(10);
-    claptrap.takeDamage(80);
-    claptrap.takeDamage(10);
-    // claptrap.takeDamage(100);
-    // claptrap.beRepaired(20);
-    claptrap.takeDamage(10);
-    return 0;
-}
+    private:
+        /* data */
+    public:
+        ScavTrap(std::string str);
+        ~ScavTrap();
+        void highFivesGuys(void);
+};
