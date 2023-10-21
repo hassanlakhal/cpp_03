@@ -6,14 +6,24 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:40:50 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/21 21:43:59 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/21 22:57:39 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap()
+{
+    std::cout << "default construct DiamondTrap" << std::endl;
+    this->hitPoint = FragTrap::hitPoint;
+    this->energyPoints = ScavTrap::energyPoints;
+    this->attackDamage = FragTrap::attackDamage;
+    ClapTrap::name = name + "_clap_name";
+}
+
 DiamondTrap::DiamondTrap(std::string name)
 {
+    std::cout << " parametrize construct DiamondTrap" << std::endl;
     this->hitPoint = FragTrap::hitPoint;
     this->energyPoints = ScavTrap::energyPoints;
     this->attackDamage = FragTrap::attackDamage;
