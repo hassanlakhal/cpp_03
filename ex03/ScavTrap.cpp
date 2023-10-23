@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:03:44 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/21 19:50:35 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:49:58 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
     this->energyPoints = other.energyPoints;
     this->attackDamage = other.attackDamage;
     return *this;
-}
-
-void ScavTrap::attack(const std::string& target)
-{
-    if(this->hitPoint <= 0 || this->energyPoints <= 0)
-        std::cout << "ClapTrap " << this->name << " can't attack no hit points or energy left" << std::endl;
-    else
-    {
-        this->energyPoints--;
-        std::cout << "ClapTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage! "<< std::endl;    
-    }
 }
 
 ScavTrap::~ScavTrap()

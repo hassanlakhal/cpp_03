@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:50:54 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/20 18:14:32 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:54:51 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,20 @@
 
 FragTrap::FragTrap()
 {
-    std::cout << " default Constructor ScavTrap " << std::endl;
+    std::cout << " default Constructor FragTrap " << std::endl;
+    this->name = name;
+    this->hitPoint = 100;
+    this->energyPoints = 100;
+    this->attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name)
 {
-    std::cout << " parametrize Constructor ScavTrap " << std::endl;
+    std::cout << " parametrize Constructor FragTrap " << std::endl;
     this->name = name;
     this->hitPoint = 100;
-    this->energyPoints = 50;
-    this->attackDamage = 20;
+    this->energyPoints = 100;
+    this->attackDamage = 30;
 }
 
 FragTrap::~FragTrap()
