@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:36 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/23 18:50:25 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:31:50 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int main()
 
     DiamondTrap diamond("Test-DM");
     diamond.attack("enemy");
+    diamond.whoAmI();
     return 0;
 }

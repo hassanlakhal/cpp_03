@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:03:44 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/20 17:56:55 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/25 22:28:31 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ ScavTrap::ScavTrap(std::string str)
 
 ScavTrap::ScavTrap(const ScavTrap& other)
 {
+    std::cout << " Copy Constructor ScavTrap " << std::endl;
     this->name = other.name;
     this->hitPoint = other.hitPoint;
     this->energyPoints = other.energyPoints;
@@ -40,7 +41,7 @@ ScavTrap::ScavTrap(const ScavTrap& other)
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
     if (this == &other)
-        return *this;    
+        return *this;
     this->name = other.name;
     this->hitPoint = other.hitPoint;
     this->energyPoints = other.energyPoints;
@@ -55,4 +56,14 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap is now in Gatekeeper mode." << std::endl;
+}
+void ScavTrap::attack(const std::string& target)
+{
+    if(this->hitPoint <= 0 || this->energyPoints <= 0)
+        std::cout << " ScavTrap " << this->name << " can't attack no hit points or energy left" << std::endl;
+    else
+    {
+        this->energyPoints--;
+        std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage! "<< std::endl;    
+    }
 }
