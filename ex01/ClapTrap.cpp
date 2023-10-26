@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/24 13:31:09 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/26 03:46:18 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string str) :hitPoint(10), energyPoints(10),attackDamage(0)
 {
+    std::cout << "parametrize Constructor ClapTrap" << std::endl;
     this->name = str;
 }
 
