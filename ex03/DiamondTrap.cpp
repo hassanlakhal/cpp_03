@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:40:50 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/26 00:42:18 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:25:55 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ DiamondTrap::DiamondTrap()
     ClapTrap::name = this->name + "_clap_name";
 }
 
-DiamondTrap::DiamondTrap(std::string name):name(name)
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"),  ScavTrap(name + "_clap_name") ,FragTrap(name + "_clap_name")
 {
     std::cout << " parametrize construct DiamondTrap" << std::endl;
     this->hitPoint = FragTrap::hitPoint;
     this->energyPoints = ScavTrap::energyPoints;
     this->attackDamage = FragTrap::attackDamage;
-    ClapTrap::name = this->name + "_clap_name";
+    this->name = name;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
