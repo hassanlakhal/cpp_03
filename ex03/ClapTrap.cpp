@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/24 22:29:44 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:54:41 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ ClapTrap::~ClapTrap()
     std::cout << " called Destructor ClapTrap " << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string str) :hitPoint(10), energyPoints(10),attackDamage(0)
+ClapTrap::ClapTrap(const std::string& str) :name(str),hitPoint(10), energyPoints(10),attackDamage(0)
 {
-    this->name = str;
+     std::cout << " parametrize construct ClapTrap" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator= (const ClapTrap &other)
@@ -78,9 +78,4 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << name << " repairs itself gaining " << amount << " hit points " << std::endl;
         this->energyPoints--; 
     }
-}
-
-const std::string& ClapTrap::getName() const
-{
-    return this->name;
 }
