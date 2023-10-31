@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:03:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/26 18:54:41 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:42:22 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 ClapTrap::ClapTrap():hitPoint(10), energyPoints(10),attackDamage(0)
 {
-    std::cout << " default constructor ClapTrap" << std::endl;
+    std::cout << "Default constructor" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << " called Destructor ClapTrap " << std::endl;
+    std::cout << "Called Destructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& str) :name(str),hitPoint(10), energyPoints(10),attackDamage(0)
+ClapTrap::ClapTrap(const std::string& str) :hitPoint(10), energyPoints(10),attackDamage(0)
 {
-     std::cout << " parametrize construct ClapTrap" << std::endl;
+    std::cout << "parametrize Constructor" << std::endl;
+    this->name = str;
 }
 
-ClapTrap& ClapTrap::operator= (const ClapTrap &other)
+ClapTrap& ClapTrap::operator= (ClapTrap &other)
 {
     if (this == &other)
         return *this;
@@ -40,13 +41,15 @@ ClapTrap& ClapTrap::operator= (const ClapTrap &other)
 
 ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoint(other.hitPoint), energyPoints(other.energyPoints),attackDamage(other.attackDamage)
 {
-    
+    std::cout << "copy Constructor" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
     if(this->hitPoint <= 0 || this->energyPoints <= 0)
+    {
         std::cout << "ClapTrap " << this->name << " can't attack no hit points or energy left" << std::endl;
+    } 
     else
     {
         this->energyPoints--;
@@ -58,9 +61,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->hitPoint > 0)
     {
-        this->hitPoint -= amount;
-        if (this->hitPoint < 0)
+        if (this->hitPoint < amount)
             this->hitPoint = 0;
+        else
+            this->hitPoint -= amount;
         std::cout << "ClapTrap " << name << " attack " << amount << " hit points of damage " << std::endl;
         this->energyPoints--;
     }
@@ -71,7 +75,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if(this->hitPoint <= 0 || this->energyPoints <= 0)
+    {
         std::cout << "ClapTrap " << this->name << " can't attack no hit points or energy left" << std::endl;
+    }
     else
     {
         this->hitPoint += amount;

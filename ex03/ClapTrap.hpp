@@ -6,13 +6,9 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:21:24 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/26 18:54:11 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:47:11 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
 
 #include<iostream>
 
@@ -26,14 +22,12 @@ class ClapTrap
    public:
          ClapTrap();
          ClapTrap(const std::string& str);
-         ClapTrap& operator = (const ClapTrap &other);
+         ClapTrap& operator = (ClapTrap &other);
          ClapTrap(const ClapTrap &other);
          ~ClapTrap();
          void attack(const std::string& target);
          void takeDamage(unsigned int amount);
          void beRepaired(unsigned int amount);
  };
- 
-#endif
 
 
